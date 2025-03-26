@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -12,64 +13,89 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
+    { name: 'Education', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' }
   ];
 
   return (
-    <nav className="bg-gray-900 text-white shadow-lg fixed w-full z-50">
+    <motion.nav 
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed w-full z-50 bg-transparent"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="relative flex items-center justify-between h-20 bg-gray-900/40 backdrop-blur-md rounded-full mt-4 px-6 shadow-2xl">
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold text-white hover:text-gray-300 transition">
-              Priyanshi
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <a 
+              href="#" 
+              className="text-2xl font-bold text-white hover:text-blue-400 transition-colors duration-300 flex items-center space-x-2"
+            >
+              <span>Priyanshi</span>
+              <ArrowRight className="text-blue-400 hidden md:inline" size={20} />
             </a>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-4">
-            {navItems.map((item) => (
-              <a
+          <div className="hidden md:flex space-x-4 items-center">
+            {navItems.map((item, index) => (
+              <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 relative group"
               >
                 {item.name}
-              </a>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+              </motion.a>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button 
+          <div className="md:hidden">
+            <motion.button
+              whileTap={{ scale: 0.9 }}
               onClick={toggleMenu}
               className="text-gray-300 hover:text-white focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            </motion.button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="md:hidden absolute w-full left-0 px-4 mt-2"
+            >
+              <div className="bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+                {navItems.map((item) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    whileTap={{ scale: 0.95 }}
+                    className="block px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-300"
+                    onClick={toggleMenu}
+                  >
+                    {item.name}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
