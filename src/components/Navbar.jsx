@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,7 +13,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '/about' },
     { name: 'Education', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' }
@@ -26,6 +27,7 @@ const Navbar = () => {
       className="fixed w-full z-50 bg-transparent"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         <div className="relative flex items-center justify-between h-20 bg-gray-900/40 backdrop-blur-md rounded-full mt-4 px-6 shadow-2xl">
           {/* Logo */}
           <motion.div 
