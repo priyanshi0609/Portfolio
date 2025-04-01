@@ -2,10 +2,9 @@ import React from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import { 
-  AtSign, 
-  Github, 
+  Mail, 
+  GithubIcon, 
   Linkedin, 
-  Download, 
   ArrowRight 
 } from 'lucide-react';
 import Navbar from './Navbar';
@@ -97,7 +96,7 @@ const Home = () => {
                     href="mailto:priyanshibothra753@gmail.com" 
                     className="text-gray-300 hover:text-white transition duration-300"
                   >
-                    <AtSign />
+                    <Mail />
                   </a>
                   <a 
                     href="https://github.com/priyanshi0609" 
@@ -105,7 +104,7 @@ const Home = () => {
                     rel="noopener noreferrer"
                     className="text-gray-300 hover:text-white transition duration-300"
                   >
-                    <Github />
+                    <GithubIcon />
                   </a>
                   <a 
                     href="https://www.linkedin.com/in/priyanshi-bothra-339568219/" 
@@ -115,13 +114,7 @@ const Home = () => {
                   >
                     <Linkedin />
                   </a>
-                  <a 
-                    href="/resume.pdf" 
-                    download
-                    className="text-gray-300 hover:text-white transition duration-300"
-                  >
-                    <Download />
-                  </a>
+                  
                 </div>
               </div>
             </motion.div>
