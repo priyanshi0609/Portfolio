@@ -5,8 +5,10 @@ import {
   Palette, 
   Lightbulb, 
   Award, 
-  Target, 
-  Globe 
+  Trophy, 
+  Medal,
+  Star,
+  Bot,
 } from 'lucide-react';
 import Navbar from './Navbar';
 
@@ -14,39 +16,25 @@ const AboutSection = () => {
   const skills = [
     { 
       icon: <Code className="text-blue-500" size={36} />, 
-      title: 'Web Development', 
-      description: 'Crafting responsive and dynamic web applications using modern technologies.' 
+      title: 'Full-stack Web Development', 
+      description: 'Proficient in front-end and backend, I build dynamic, responsive, and scalable web applications with modern frameworks',
     },
     { 
       icon: <Palette className="text-purple-500" size={36} />, 
       title: 'UI/UX Design', 
-      description: 'Creating intuitive and visually appealing user interfaces that enhance user experience.' 
+      description: 'Passionate about creating intuitive, user-friendly interfaces with a focus on accessibility, aesthetics, and seamless user experiences'
     },
     { 
-      icon: <Lightbulb className="text-yellow-500" size={36} />, 
-      title: 'Problem Solving', 
-      description: 'Analytical approach to breaking down complex problems and developing innovative solutions.' 
+      icon: <Bot className="text-blue-500" size={36} />, 
+      title: 'AI/ML Enthusiast', 
+      description: 'Exploring the potential of artificial intelligence and machine learning to develop intelligent solutions that enhance automation and decision-making' 
+    },
+    { 
+      icon:<Lightbulb className="text-yellow-500" size={36} />,
+      title: 'Data Structure and Algorithms',
+      description: 'Strong problem-solving skills with a deep understanding of algorithms and optimization techniques, essential for efficient coding and competitive programming.'
     }
   ];
-
-  const achievements = [
-    { 
-      icon: <Award className="text-green-500" size={36} />, 
-      title: 'Top Performer', 
-      description: 'Recognized for outstanding performance in web development projects.' 
-    },
-    { 
-      icon: <Target className="text-red-500" size={36} />, 
-      title: 'Goal Oriented', 
-      description: 'Consistently delivering high-quality work with precision and dedication.' 
-    },
-    { 
-      icon: <Globe className="text-cyan-500" size={36} />, 
-      title: 'Global Perspective', 
-      description: 'Experienced in working with international teams and diverse project requirements.' 
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-white flex flex-col">
       {/* Using the Navbar component instead of custom navbar */}
@@ -94,17 +82,9 @@ const AboutSection = () => {
               </div>
               <div className="md:w-2/3">
                 <p className="text-gray-300 leading-relaxed mb-6">
-                  A dynamic web developer with a passion for creating innovative digital solutions. 
-                  My journey in technology is driven by curiosity, creativity, and a commitment to 
-                  continuous learning. I thrive on transforming complex ideas into user-friendly 
-                  and visually appealing web experiences.
+                I am Priyanshi Bothra, a Full Stack Web Developer, UI/UX Designer, and AI/ML Enthusiast, currently pursuing B.Tech IT at GGSIPU. Passionate about crafting seamless digital experiences, I thrive on curiosity, creativity, and commitment. Beyond coding, I am a confident speaker and natural communicator, actively hosting events and engaging with communities. I love competing in Hackathons and Coding competitions, constantly pushing boundaries to innovate and excel.
                 </p>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  With over 5 years of experience in full-stack development, I've had the opportunity
-                  to work on diverse projects across various industries. My approach combines technical 
-                  expertise with an artistic eye for detail, ensuring that every project not only 
-                  functions flawlessly but also delivers an exceptional user experience.
-                </p>
+                
                 <div className="flex space-x-4">
                   <motion.div 
                     whileHover={{ y: -5 }}
@@ -131,65 +111,38 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
             className="mb-16"
           >
-            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-blue-400">My Expertise</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-blue-400 text-center">My Expertise</h3>
+            
+            {/* 2x2 Matrix Container */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {skills.map((skill, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-                  className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center shadow-xl"
-                >
-                  <div className="mb-4">{skill.icon}</div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-3">{skill.title}</h4>
-                    <p className="text-gray-400">{skill.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Achievements Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-blue-400">My Achievements</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {achievements.map((achievement, index) => (
                 <motion.div 
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
                   whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)"
+                    scale: 1.05, 
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.2)",
+                    backgroundColor: "rgba(30, 41, 59, 0.7)" 
                   }}
-                  className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 text-center shadow-2xl"
+                  className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-gray-700/50 flex flex-col h-full transition-all duration-300"
                 >
-                  <motion.div 
-                    className="flex justify-center mb-6"
-                    whileHover={{ rotate: 10 }}
-                  >
-                    {achievement.icon}
-                  </motion.div>
-                  <h4 className="text-xl font-semibold mb-4">{achievement.title}</h4>
-                  <p className="text-gray-400">{achievement.description}</p>
+                  <div className="flex items-center mb-4">
+                    <div className="p-3 rounded-full bg-gray-900/50 mr-4">
+                      {skill.icon}
+                    </div>
+                    <h4 className="text-xl font-semibold">{skill.title}</h4>
+                  </div>
+                  <p className="text-gray-400 mt-2">{skill.description}</p>
+                  
+                  {/* Decorative element */}
+                  <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-4"></div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-
-          
         </div>
       </section>
     </div>
