@@ -37,7 +37,7 @@ const AboutSection = () => {
   ];
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-white flex flex-col">
-      {/* Using the Navbar component instead of custom navbar */}
+      {/* Navbar */}
       <Navbar />
 
       {/* Hero section with title */}
