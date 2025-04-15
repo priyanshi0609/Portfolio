@@ -79,8 +79,8 @@ const AboutSection = () => {
                   className="h-64 w-64 rounded-xl overflow-hidden shadow-xl mb-6"
                 >
                   <img 
-                    src="/api/placeholder/400/400" 
-                    alt="Profile" 
+                    src="/photo.png"
+                    alt="" 
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
