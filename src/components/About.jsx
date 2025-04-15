@@ -4,11 +4,11 @@ import {
   Code, 
   Palette, 
   Lightbulb, 
-  Award, 
-  Trophy, 
-  Medal,
-  Star,
   Bot,
+  Mail,
+  MapPin,
+  Github,
+  Linkedin
 } from 'lucide-react';
 import Navbar from './Navbar';
 
@@ -35,6 +35,7 @@ const AboutSection = () => {
       description: 'Strong problem-solving skills with a deep understanding of algorithms and optimization techniques, essential for efficient coding and competitive programming.'
     }
   ];
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-white flex flex-col">
       {/* Navbar */}
@@ -53,7 +54,7 @@ const AboutSection = () => {
               About <span className="text-blue-400">Me</span>
             </h1>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Passionate about creating innovative digital experiences that transform complex challenges into elegant, user-centric solutions.
+              Full Stack Developer specializing in crafting modern web applications with clean, efficient code and intuitive user experiences.
             </p>
           </motion.div>
         </div>
@@ -62,7 +63,7 @@ const AboutSection = () => {
       {/* Main content */}
       <section id="about-content" className="py-12">
         <div className="container mx-auto px-4 max-w-6xl">
-          {/* About Myself Section */}
+          {/* About Myself Section - Updated Style */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,39 +72,91 @@ const AboutSection = () => {
             className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl mb-16"
           >
             <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-blue-400">Who I Am</h3>
-            <div className="md:flex items-center gap-8">
-              <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
+            <div className="md:flex items-start gap-8">
+              <div className="md:w-1/3 flex flex-col items-center mb-6 md:mb-0">
                 <motion.div 
-                  whileHover={{ rotate: 5 }}
-                  className="h-64 w-64 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  className="h-64 w-64 rounded-xl overflow-hidden shadow-xl mb-6"
                 >
-                  <span className="text-6xl">👨‍💻</span>
+                  <img 
+                    src="/api/placeholder/400/400" 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
                 </motion.div>
+                
+                <div className="space-y-4 w-full">
+                  <div className="flex items-center text-gray-300">
+                    <Mail className="mr-2 text-blue-400" size={18} />
+                    <span>priyanshibothra753@gmail.com</span>
+                  </div>
+                  <div className="flex items-center text-gray-300">
+                    <MapPin className="mr-2 text-blue-400" size={18} />
+                    <span>New Delhi, India</span>
+                  </div>
+                  <div className="flex space-x-3">
+                    <motion.a 
+                      whileHover={{ y: -3 }}
+                      className="bg-gray-700 p-2 rounded-full"
+                      href= "https://github.com/priyanshi0609"
+                    >
+                      <Github className="text-white" size={20} />
+                    </motion.a>
+                    <motion.a 
+                      whileHover={{ y: -3 }}
+                      className="bg-gray-700 p-2 rounded-full"
+                      href="https://www.linkedin.com/in/priyanshi-bothra-339568219/"
+                    >
+                      <Linkedin className="text-white" size={20} />
+                    </motion.a>
+                  </div>
+                </div>
               </div>
+              
               <div className="md:w-2/3">
                 <p className="text-gray-300 leading-relaxed mb-6">
-                I am Priyanshi Bothra, a Full Stack Web Developer, UI/UX Designer, and AI/ML Enthusiast, currently pursuing B.Tech IT at GGSIPU. Passionate about crafting seamless digital experiences, I thrive on curiosity, creativity, and commitment. Beyond coding, I am a confident speaker and natural communicator, actively hosting events and engaging with communities. I love competing in Hackathons and Coding competitions, constantly pushing boundaries to innovate and excel.
+                Hi! I’m Priyanshi Bothra, a 2nd-year IT student & Web Developer passionate about building sleek, user-centric web apps. I love turning ideas into interactive digital experiences—whether it’s dashboards, travel platforms, or learning tools.
+                A hackathon finalist, community leader, and active voice at events, I blend tech with creativity, communication, and purpose. Always learning, always creating. Let’s connect and build something impactful!
                 </p>
                 
-                <div className="flex space-x-4">
-                  <motion.div 
-                    whileHover={{ y: -5 }}
-                    className="bg-blue-500/20 p-3 rounded-full"
-                  >
-                    <Code className="text-blue-400" size={24} />
-                  </motion.div>
-                  <motion.div 
-                    whileHover={{ y: -5 }}
-                    className="bg-purple-500/20 p-3 rounded-full"
-                  >
-                    <Palette className="text-purple-400" size={24} />
-                  </motion.div>
+                <div className="bg-gray-700/50 rounded-lg p-4 mb-6">
+                  <h4 className="text-lg font-medium text-blue-300 mb-3">Experience Highlights</h4>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start">
+                      <div className="bg-blue-500/20 p-1 rounded-full mr-2 mt-1">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      </div>
+                      Web Developer intern @EternalInfoTech
+                    </li>
+                    <li className="flex items-start">
+                      <div className="bg-blue-500/20 p-1 rounded-full mr-2 mt-1">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      </div>
+                      Project Chair( Project Shakti) @DrishtiRCBPIT
+                    </li>
+                    <li className="flex items-start">
+                      <div className="bg-blue-500/20 p-1 rounded-full mr-2 mt-1">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      </div>
+                      SheFI Scholar '24 (Cohort 12)
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-gray-700/50 rounded-lg p-4">
+                  <h4 className="text-lg font-medium text-blue-300 mb-3">Achievements</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">4 X Hack winner</span>
+                    <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">3 x Finalist</span>
+                    <span className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm">12x Participated</span>
+                    
+                  </div>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* My Expertise Section */}
+          {/* My Expertise Section - Kept as is */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
