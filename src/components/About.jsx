@@ -54,7 +54,7 @@ const AboutSection = () => {
               About <span className="text-blue-400">Me</span>
             </h1>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Full Stack Developer specializing in crafting modern web applications with clean, efficient code and intuitive user experiences.
+            Web Developer passionate about building responsive, user-focused web applications with clean code, seamless design, and creative functionality
             </p>
           </motion.div>
         </div>
