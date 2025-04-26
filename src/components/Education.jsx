@@ -117,9 +117,9 @@ const EducationPage = () => {
                     <div className="bg-[#172b54] rounded-xl overflow-hidden shadow-xl transition-transform hover:scale-105 duration-300">
                       <div className="h-64 bg-gradient-to-r from-blue-900 to-indigo-800 flex items-center justify-center overflow-hidden">
                         <img 
-                          src="/images/dps-school.jpg" 
+                          src="/school.png" 
                           alt="Delhi Public School Campus" 
-                          className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                          className="w-auto h-auto max-w-full max-h-full object-contain p-4"
                         />
                       </div>
                       <div className="p-6">
@@ -149,72 +149,19 @@ const EducationPage = () => {
                     
                     <p className="font-semibold mb-2">Activities & Achievements:</p>
                     <ul className="list-disc list-inside text-gray-300">
-                      <li>Science Club President</li>
-                      <li>School Representative at National Science Fair</li>
-                      <li>Computer Science Excellence Award</li>
-                      <li>First place in Inter-school Coding Competition</li>
-                      <li>Member of School Mathematics Team</li>
+                      <li>House Captain</li>
+                      <li>Vice President(2022-23)</li>
+                      <li>Participated in Inter-school Competitions</li>
+                      <li>Member of School Science&Technology Club</li>
                     </ul>
                     
-                    <div className="mt-6 bg-[#0f1f41] p-4 rounded-lg">
-                      <h5 className="font-bold text-[#4a8cff]">Final Year Project</h5>
-                      <p className="text-gray-300 mt-2">
-                        Developed a smart inventory management system for the school's science lab that helped track and manage equipment and chemicals efficiently.
-                      </p>
-                    </div>
+                   
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
-          
-          {/* Certifications Section (New) */}
-          <AnimatePresence>
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-24 mb-16"
-            >
-              <h2 className="text-4xl font-bold mb-10 text-center">
-                <span className="text-white">Professional </span>
-                <span className="text-[#4a8cff]">Certifications</span>
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Certification 1 */}
-                <div className="bg-[#172b54] rounded-xl p-6 shadow-xl transition-transform hover:scale-105 duration-300">
-                  <div className="h-3 bg-[#4a8cff] rounded-t-xl -mt-6 -mx-6 mb-4"></div>
-                  <h3 className="text-xl font-bold text-[#4a8cff] mb-2">Full Stack Web Development</h3>
-                  <p className="text-gray-300 mb-1">Udemy</p>
-                  <p className="text-gray-400 text-sm mb-4">Completed March 2022</p>
-                  <p className="text-gray-300">Comprehensive course covering MERN stack development with real-world projects and industry best practices.</p>
-                </div>
-                
-                {/* Certification 2 */}
-                <div className="bg-[#172b54] rounded-xl p-6 shadow-xl transition-transform hover:scale-105 duration-300">
-                  <div className="h-3 bg-[#4a8cff] rounded-t-xl -mt-6 -mx-6 mb-4"></div>
-                  <h3 className="text-xl font-bold text-[#4a8cff] mb-2">UI/UX Design Fundamentals</h3>
-                  <p className="text-gray-300 mb-1">Google</p>
-                  <p className="text-gray-400 text-sm mb-4">Completed July 2023</p>
-                  <p className="text-gray-300">Professional certification focused on user research, wireframing, prototyping, and design systems.</p>
-                </div>
-                
-                {/* Certification 3 */}
-                <div className="bg-[#172b54] rounded-xl p-6 shadow-xl transition-transform hover:scale-105 duration-300">
-                  <div className="h-3 bg-[#4a8cff] rounded-t-xl -mt-6 -mx-6 mb-4"></div>
-                  <h3 className="text-xl font-bold text-[#4a8cff] mb-2">Machine Learning Specialization</h3>
-                  <p className="text-gray-300 mb-1">Coursera</p>
-                  <p className="text-gray-400 text-sm mb-4">Completed December 2023</p>
-                  <p className="text-gray-300">Three-course specialization covering supervised learning, neural networks, and machine learning systems design.</p>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-          
-          {/* Professional Experience Section */}
+           {/* Professional Experience Section */}
           <AnimatePresence>
             <motion.div 
               initial="hidden"
@@ -271,34 +218,14 @@ const EducationPage = () => {
                       <div className="flex flex-wrap gap-2">
                         <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">React.js</span>
                         <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">Tailwind CSS</span>
-                        <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">Redux</span>
+                        <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">php</span>
                         <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">JavaScript</span>
+                        <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">Gsap</span>
                         <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">Git</span>
                         <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">Figma</span>
                       </div>
                     </div>
                     
-                    <div className="mt-6">
-                      <h4 className="text-lg font-semibold mb-3">Key Project:</h4>
-                      <div className="bg-[#0f1f41] p-4 rounded-lg">
-                        <h5 className="font-bold text-[#4a8cff]">E-commerce Analytics Dashboard</h5>
-                        <p className="text-gray-300 mt-2">
-                          Developed an interactive dashboard that visualized sales data, customer metrics, and inventory status. The dashboard featured real-time updates and customizable views to meet specific business needs.
-                        </p>
-                        <div className="mt-4 grid grid-cols-2 gap-4">
-                          <img 
-                            src="/images/dashboard-preview-1.jpg" 
-                            alt="Dashboard Preview" 
-                            className="rounded-lg w-full h-32 object-cover"
-                          />
-                          <img 
-                            src="/images/dashboard-preview-2.jpg" 
-                            alt="Dashboard Preview" 
-                            className="rounded-lg w-full h-32 object-cover"
-                          />
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
