@@ -58,16 +58,14 @@ const EducationPage = () => {
                   <div className="text-right pr-10 mb-8 md:mb-0">
                     <h3 className="text-2xl font-bold text-[#4a8cff]">B.Tech in Information Technology</h3>
                     <p className="text-xl">GGSIPU</p>
-                    <p className="text-gray-300 my-2">2021 - Present</p>
+                    <p className="text-gray-300 my-2">2023 - Present</p>
                     <p className="text-gray-300 mb-4">CGPA: 9.2/10</p>
                     
                     <p className="font-semibold mb-2">Relevant Coursework:</p>
                     <ul className="list-disc list-inside text-gray-300">
                       <li>Data Structures & Algorithms</li>
                       <li>Web Development</li>
-                      <li>Machine Learning</li>
                       <li>UI/UX Design</li>
-                      <li>Cloud Computing</li>
                       <li>Database Management Systems</li>
                     </ul>
                   </div>
@@ -78,18 +76,18 @@ const EducationPage = () => {
                   {/* Right Content - College Card */}
                   <div>
                     <div className="bg-[#172b54] rounded-xl overflow-hidden shadow-xl transition-transform hover:scale-105 duration-300">
-                      <div className="h-64 bg-gradient-to-r from-blue-900 to-indigo-800 flex items-center justify-center overflow-hidden">
-                        <img 
-                          src="/college.png" 
-                          alt="GGSIPU Campus" 
-                          className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
-                        />
-                      </div>
+                    <div className="h-64 bg-gradient-to-r from-blue-900 to-indigo-800 flex items-center justify-center overflow-hidden">
+                     <img 
+                       src="/college.png" 
+                       alt="GGSIPU Logo" 
+                      className="w-auto h-auto max-w-full max-h-full object-contain p-4"
+                      />
+                    </div>
                       <div className="p-6">
                         <h4 className="text-xl font-bold mb-2">Guru Gobind Singh Indraprastha University</h4>
                         <p className="text-gray-300 mb-4">Sector 16C, Dwarka, New Delhi, Delhi 110078</p>
                         <p className="text-gray-300">
-                          Pursuing advanced coursework in Full Stack Web Development, UI/UX Design, and AI/ML. Actively participating in hackathons, coding competitions, and technical clubs.
+                          Pursuing advanced coursework in Information Technology , Full Stack Web Development, UI/UX Design, and AI/ML. Actively participating in hackathons, coding competitions, and technical clubs.
                         </p>
                         <div className="mt-4 flex flex-wrap gap-2">
                           <span className="px-3 py-1 bg-[#0f1f41] text-blue-300 rounded-full text-sm">Web Dev Club</span>
