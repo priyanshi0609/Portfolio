@@ -183,7 +183,7 @@ const EducationPage = () => {
                   <div className="md:w-1/3">
                     <div className="bg-[#0f1f41] rounded-lg p-4 h-full flex items-center justify-center overflow-hidden">
                       <img 
-                        src="/images/techinnovate-logo.jpg" 
+                        src="/eterna.png" 
                         alt="TechInnovate Solutions" 
                         className="max-w-full max-h-48 object-contain"
                       />
@@ -194,8 +194,9 @@ const EducationPage = () => {
                   <div className="md:w-2/3">
                     <div className="flex justify-between items-start flex-col md:flex-row">
                       <div>
-                        <h3 className="text-2xl font-bold text-[#4a8cff]">Frontend Developer Intern</h3>
-                        <p className="text-gray-300 mt-1">June 2023 - August 2023</p>
+                        <h3 className="text-2xl font-bold text-[#4a8cff]">Web Developer Intern</h3>
+                        <p className="text-xl"> Eterna Infotech</p>
+                        <p className="text-gray-300 mt-1">November 2024 - Feburary 2025</p>
                       </div>
                       <div className="mt-2 md:mt-0">
                         <span className="bg-[#0f1f41] text-blue-300 px-4 py-1 rounded-full text-sm">3 Months</span>
@@ -230,155 +231,11 @@ const EducationPage = () => {
                 </div>
               </div>
               
-              {/* Call to Action for More Experience */}
-              <div className="text-center mt-8">
-                <p className="text-xl text-gray-300 mb-4">Looking to add more professional experience as I continue my journey</p>
-                <div className="inline-block bg-[#172b54] px-6 py-3 rounded-lg border border-[#4a8cff] text-[#4a8cff] hover:bg-[#0f1f41] transition-colors duration-300 cursor-pointer">
-                  Open to New Opportunities
-                </div>
-              </div>
+              
             </motion.div>
           </AnimatePresence>
           
-          {/* Skills Section (New) */}
-          <AnimatePresence>
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-28"
-            >
-              <h2 className="text-4xl font-bold mb-10 text-center">
-                <span className="text-white">Technical </span>
-                <span className="text-[#4a8cff]">Skills</span>
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Left Column - Programming */}
-                <div className="bg-[#172b54] p-6 rounded-xl shadow-xl">
-                  <h3 className="text-2xl font-bold text-[#4a8cff] mb-6">Programming Languages</h3>
-                  
-                  {/* Skill Bars */}
-                  <div className="space-y-4">
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-gray-300">JavaScript/TypeScript</span>
-                        <span className="text-gray-400">90%</span>
-                      </div>
-                      <div className="w-full bg-[#0f1f41] rounded-full h-2.5">
-                        <div className="bg-[#4a8cff] h-2.5 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-gray-300">Python</span>
-                        <span className="text-gray-400">85%</span>
-                      </div>
-                      <div className="w-full bg-[#0f1f41] rounded-full h-2.5">
-                        <div className="bg-[#4a8cff] h-2.5 rounded-full" style={{ width: '85%' }}></div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-gray-300">Java</span>
-                        <span className="text-gray-400">70%</span>
-                      </div>
-                      <div className="w-full bg-[#0f1f41] rounded-full h-2.5">
-                        <div className="bg-[#4a8cff] h-2.5 rounded-full" style={{ width: '70%' }}></div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-gray-300">C/C++</span>
-                        <span className="text-gray-400">75%</span>
-                      </div>
-                      <div className="w-full bg-[#0f1f41] rounded-full h-2.5">
-                        <div className="bg-[#4a8cff] h-2.5 rounded-full" style={{ width: '75%' }}></div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-gray-300">SQL</span>
-                        <span className="text-gray-400">80%</span>
-                      </div>
-                      <div className="w-full bg-[#0f1f41] rounded-full h-2.5">
-                        <div className="bg-[#4a8cff] h-2.5 rounded-full" style={{ width: '80%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Right Column - Frameworks & Tools */}
-                <div className="bg-[#172b54] p-6 rounded-xl shadow-xl">
-                  <h3 className="text-2xl font-bold text-[#4a8cff] mb-6">Frameworks & Tools</h3>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-[#0f1f41] p-3 rounded-lg flex items-center">
-                      <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-lg font-bold text-white">R</span>
-                      </div>
-                      <span className="text-gray-300">React.js</span>
-                    </div>
-                    
-                    <div className="bg-[#0f1f41] p-3 rounded-lg flex items-center">
-                      <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-lg font-bold text-white">N</span>
-                      </div>
-                      <span className="text-gray-300">Node.js</span>
-                    </div>
-                    
-                    <div className="bg-[#0f1f41] p-3 rounded-lg flex items-center">
-                      <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-lg font-bold text-white">T</span>
-                      </div>
-                      <span className="text-gray-300">TensorFlow</span>
-                    </div>
-                    
-                    <div className="bg-[#0f1f41] p-3 rounded-lg flex items-center">
-                      <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-lg font-bold text-white">F</span>
-                      </div>
-                      <span className="text-gray-300">Figma</span>
-                    </div>
-                    
-                    <div className="bg-[#0f1f41] p-3 rounded-lg flex items-center">
-                      <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-lg font-bold text-white">T</span>
-                      </div>
-                      <span className="text-gray-300">Tailwind</span>
-                    </div>
-                    
-                    <div className="bg-[#0f1f41] p-3 rounded-lg flex items-center">
-                      <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-lg font-bold text-white">G</span>
-                      </div>
-                      <span className="text-gray-300">Git/GitHub</span>
-                    </div>
-                    
-                    <div className="bg-[#0f1f41] p-3 rounded-lg flex items-center">
-                      <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-lg font-bold text-white">M</span>
-                      </div>
-                      <span className="text-gray-300">MongoDB</span>
-                    </div>
-                    
-                    <div className="bg-[#0f1f41] p-3 rounded-lg flex items-center">
-                      <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-lg font-bold text-white">A</span>
-                      </div>
-                      <span className="text-gray-300">AWS</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+          
           
           {/* Contact Section */}
           <AnimatePresence>
