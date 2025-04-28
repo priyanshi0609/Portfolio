@@ -206,11 +206,11 @@ const EducationPage = () => {
                     <div className="mt-6">
                       <h4 className="text-lg font-semibold mb-3">Responsibilities & Achievements:</h4>
                       <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                        <li>Developed responsive UI components using React.js and Tailwind CSS for the company's flagship e-commerce dashboard</li>
-                        <li>Collaborated with UX designers to implement designs that improved user engagement by 35%</li>
-                        <li>Optimized application performance resulting in a 40% decrease in page load time</li>
-                        <li>Participated in daily stand-ups and weekly code reviews to ensure code quality and consistency</li>
-                        <li>Implemented state management solutions using Redux for complex application features</li>
+                        <li>Worked on the Frontend side of their Project MTS(My true skills)</li>
+                        <li>Managed frontend development issues, ensuring smooth and error-free UI performance across all devices.</li>
+                        <li>Implemented responsive design techniques to optimize platform usability across mobile, tablet, and desktop</li>
+                        <li>Enhanced product features and improved user experience by incorporating client feedback and modern UI/UX practices</li>
+                        <li>Designed gamification elements to boost user engagement and retention</li>
                       </ul>
                     </div>
                     
