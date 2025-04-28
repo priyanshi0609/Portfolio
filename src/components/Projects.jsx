@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { GitHub, ExternalLink } from 'lucide-react';
-import Navbar from './Navbar'; // Importing your existing Navbar component
+import { Github, ExternalLink } from 'lucide-react';
+import Navbar from './Navbar'; 
 
 const ProjectCard = ({ project, index }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -149,7 +149,7 @@ const Projects = () => {
   
   return (
     <div className="min-h-screen bg-navy-900 text-white">
-      <Navbar /> {/* Using your existing Navbar component */}
+      <Navbar /> 
       
       <div id="projects-section" className="container mx-auto pt-24 pb-16 px-6">
         <div className="text-center mb-12">
