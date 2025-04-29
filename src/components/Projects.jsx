@@ -77,8 +77,8 @@ const Projects = () => {
   const projects = [
     {
       title: "Signal-X",
-      description: "Signal-X is an AI-powered traffic management system using advanced computer vision, edge computing, and geospatial intelligence. With real-time sensor fusion, machine learning algorithms, and adaptive signal control, it enables dynamic congestion management and emergency vehicle prioritization.",
-      image: "/Signalx.png/600/400",
+      description: "Signal-X is an AI-driven traffic management system that uses computer vision, edge computing, and geospatial intelligence to optimize traffic flow. With real-time sensor fusion and adaptive signal control, it reduces congestion and prioritizes emergency vehicles efficiently.",
+      image: "/signalx.png/600/400",
       techStack: ["React", "Pygames", "MongoDB", "TensorFlow", "Python","opencv","Flask","expo","react-native"],
       github: "https://github.com/priyanshi0609/Signal-X",
       demo: "https://signal-x-zkh5.vercel.app/",
@@ -86,20 +86,20 @@ const Projects = () => {
     },
     {
       title: "Recap",
-      description: "Comprehensive analytics platform that visualizes sales data, customer behavior, and inventory management for e-commerce businesses.",
-      image: "/api/placeholder/600/400",
-      techStack: ["React", "Redux", "Express", "D3.js", "PostgreSQL"],
+      description: "Recap is an innovative study companion designed to revolutionize how students organize and interact with their study materials. Our platform leverages artificial intelligence to create an intelligent note-taking ecosystem that grows with your learning journey.",
+      image: "/recap.png/600/400",
+      techStack: ["React", "Nodejs", "Firebase", "tailwind-css", "ocr-recognition","cohere-ai","assembly-ai"],
       github: "https://github.com/priyanshi/ecommerce-analytics",
-      demo: "https://ecom-analytics-demo.netlify.app",
+      demo: "https://recap-5ajg.vercel.app/",
       category: "Dashboard"
     },
     {
       title: "Athleto",
-      description: "Real-time cryptocurrency tracker with price alerts, portfolio management, and predictive trend analysis based on historical data.",
-      image: "/api/placeholder/600/400",
-      techStack: ["React", "Firebase", "Chart.js", "Tailwind CSS", "CoinGecko API"],
-      github: "https://github.com/priyanshi/crypto-tracker",
-      demo: "https://crypto-market-tracker.web.app",
+      description: "Athleto is a virtual platform designed to support underprivileged athletes in India by providing them with the resources, training, and financial backing they need to excel in their respective sports. Our mission is to bridge the gap between talent and opportunity, ensuring that no athlete is left behind due to economic constraints.",
+      image: "/athleto.png/600/400",
+      techStack: ["Nextjs", "Supabase", "Typescript", "Tailwind CSS", "zustand"],
+      github: "https://github.com/priyanshi0609/Athleto",
+      demo: "https://athleto-project.vercel.app/",
       category: "Finance"
     },
     {
