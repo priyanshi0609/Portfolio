@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github , ExternalLink } from 'lucide-react';
 import Navbar from './Navbar'; 
 
 const ProjectCard = ({ project, index }) => {
@@ -51,7 +51,7 @@ const ProjectCard = ({ project, index }) => {
             rel="noopener noreferrer"
             className="flex items-center space-x-1 text-blue-400 hover:text-blue-300 transition-colors"
           >
-            <GitHub size={18} />
+            <Github  size={18} />
             <span>Code</span>
           </a>
           
@@ -76,16 +76,16 @@ const Projects = () => {
   
   const projects = [
     {
-      title: "AI Task Assistant",
-      description: "A sophisticated task management application that uses AI to prioritize and categorize tasks, featuring real-time updates and a clean, intuitive interface.",
-      image: "/api/placeholder/600/400",
-      techStack: ["React", "Node.js", "MongoDB", "TensorFlow", "Socket.io"],
-      github: "https://github.com/priyanshi/ai-task-assistant",
-      demo: "https://ai-task-assistant.vercel.app",
+      title: "Signal-X",
+      description: "Signal-X is an AI-powered traffic management system using advanced computer vision, edge computing, and geospatial intelligence. With real-time sensor fusion, machine learning algorithms, and adaptive signal control, it enables dynamic congestion management and emergency vehicle prioritization.",
+      image: "/Signalx.png/600/400",
+      techStack: ["React", "Pygames", "MongoDB", "TensorFlow", "Python","opencv","Flask","expo","react-native"],
+      github: "https://github.com/priyanshi0609/Signal-X",
+      demo: "https://signal-x-zkh5.vercel.app/",
       category: "Web App"
     },
     {
-      title: "E-commerce Analytics Dashboard",
+      title: "Recap",
       description: "Comprehensive analytics platform that visualizes sales data, customer behavior, and inventory management for e-commerce businesses.",
       image: "/api/placeholder/600/400",
       techStack: ["React", "Redux", "Express", "D3.js", "PostgreSQL"],
@@ -94,7 +94,7 @@ const Projects = () => {
       category: "Dashboard"
     },
     {
-      title: "Crypto Market Tracker",
+      title: "Athleto",
       description: "Real-time cryptocurrency tracker with price alerts, portfolio management, and predictive trend analysis based on historical data.",
       image: "/api/placeholder/600/400",
       techStack: ["React", "Firebase", "Chart.js", "Tailwind CSS", "CoinGecko API"],
@@ -103,7 +103,7 @@ const Projects = () => {
       category: "Finance"
     },
     {
-      title: "Social Media Content Scheduler",
+      title: "Travello",
       description: "An all-in-one platform for planning, creating, and scheduling content across multiple social media platforms with analytics integration.",
       image: "/api/placeholder/600/400",
       techStack: ["Next.js", "GraphQL", "AWS Lambda", "OAuth", "Material UI"],
@@ -111,15 +111,7 @@ const Projects = () => {
       demo: "https://social-scheduler.vercel.app",
       category: "Tool"
     },
-    {
-      title: "AR Interior Designer",
-      description: "Augmented Reality application that allows users to visualize furniture and décor in their space before purchasing, with precise measurements and color matching.",
-      image: "/api/placeholder/600/400",
-      techStack: ["React Native", "ARKit", "Three.js", "Express", "MongoDB"],
-      github: "https://github.com/priyanshi/ar-interior",
-      demo: "https://ar-interior.demo.app",
-      category: "Mobile App"
-    },
+    
   ];
   
   const categories = ['All', 'Web App', 'Dashboard', 'Finance', 'Tool', 'Mobile App'];
@@ -148,7 +140,7 @@ const Projects = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-navy-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-white flex flex-col">
       <Navbar /> 
       
       <div id="projects-section" className="container mx-auto pt-24 pb-16 px-6">
