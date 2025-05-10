@@ -115,7 +115,7 @@ const AboutSection = () => {
               
               <div className="md:w-2/3">
                 <p className="text-gray-300 leading-relaxed mb-6">
-                Hi! I’m Priyanshi Bothra, a 2nd-year IT student & Web Developer passionate about building sleek, user-centric web apps. I love turning ideas into interactive digital experiences—whether it’s dashboards, travel platforms, or learning tools.
+                Hi! I’m Priyanshi Bothra, a 2nd-year IT student & Full Stack Web Developer passionate about building sleek, user-centric web apps. I love turning ideas into interactive digital experiences—whether it’s dashboards, travel platforms, or learning tools.
                 A hackathon finalist, community leader, and active voice at events, I blend tech with creativity, communication, and purpose. Always learning, always creating. Let’s connect and build something impactful!
                 </p>
                 
@@ -126,7 +126,7 @@ const AboutSection = () => {
                       <div className="bg-blue-500/20 p-1 rounded-full mr-2 mt-1">
                         <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                       </div>
-                      Web Developer intern @EternalInfoTech
+                      Web Developer intern @EternaInfoTech
                     </li>
                     <li className="flex items-start">
                       <div className="bg-blue-500/20 p-1 rounded-full mr-2 mt-1">
@@ -146,8 +146,8 @@ const AboutSection = () => {
                 <div className="bg-gray-700/50 rounded-lg p-4">
                   <h4 className="text-lg font-medium text-blue-300 mb-3">Achievements</h4>
                   <div className="flex flex-wrap gap-2">
-                    <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">4 X Hack winner</span>
-                    <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">3 x Finalist</span>
+                    <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">5 X Hack winner</span>
+                    <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">6 x Finalist</span>
                     <span className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm">12x Participated</span>
                     
                   </div>

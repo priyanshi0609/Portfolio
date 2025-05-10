@@ -231,13 +231,7 @@ const EducationPage = () => {
                       <p className="text-gray-300 leading-relaxed">
                         Pursuing advanced coursework in Information Technology, Full Stack Web Development, UI/UX Design, and AI/ML. Actively participating in hackathons, coding competitions, and technical clubs.
                       </p>
-                      <div className="mt-6 flex flex-wrap gap-3">
-                        {['Web Dev Club', 'AI Society', 'Hackathons'].map((tag, index) => (
-                          <span key={index} className="px-4 py-1.5 bg-blue-900/70 text-blue-200 rounded-full text-sm border border-blue-500/30 hover:bg-blue-800/80 transition-colors duration-300 shadow-sm">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                      
                     </div>
                   </div>
                 </motion.div>
@@ -505,18 +499,7 @@ const EducationPage = () => {
                 Get In Touch
               </motion.a>
               
-              <div className="flex justify-center gap-6 mt-10">
-                {['LinkedIn', 'GitHub', 'Email'].map((platform, index) => (
-                  <motion.a
-                    key={index}
-                    href="#"
-                    whileHover={{ y: -3, color: '#60a5fa' }}
-                    className="text-gray-300 hover:text-blue-400 transition-all duration-300"
-                  >
-                    {platform}
-                  </motion.a>
-                ))}
-              </div>
+              
             </div>
           </motion.div>
         </section>

@@ -12,7 +12,7 @@ import Navbar from './Navbar';
 const Home = () => {
   const [text] = useTypewriter({
     words: [
-      'Web Developer', 
+      'Full Stack Web Developer', 
       'UI/UX Designer', 
       'AI/ML Enthusiast', 
     ],
