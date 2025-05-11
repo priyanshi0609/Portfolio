@@ -268,7 +268,7 @@ const Projects = () => {
       description: "Signal-X is an AI-driven traffic management system that uses computer vision, edge computing, and geospatial intelligence to optimize traffic flow. With real-time sensor fusion and adaptive signal control, it reduces congestion and prioritizes emergency vehicles efficiently.",
       image: "signalx.png",
       techStack: ["React", "Pygames", "MongoDB", "TensorFlow", "Python", "OpenCV", "Flask", "Expo", "React Native"],
-      github: "https://github.com/priyanshi0609/Signal-X",
+      github: "https://github.com/priyanshi0609/Signal--X",
       demo: "https://signal-x-zkh5.vercel.app/",
       category: "Web App"
     },
@@ -384,7 +384,7 @@ const Projects = () => {
           <AnimatedSection delay={200}>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="text-white">My </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Portfolio</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Projects</span>
             </h1>
           </AnimatedSection>
           
@@ -502,35 +502,7 @@ const Projects = () => {
           </div>
         )}
         
-        {/* Call to action */}
-        <AnimatedSection delay={600} className="mt-20 text-center">
-          <div className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 backdrop-blur-sm border border-blue-800/20 rounded-xl p-8 md:p-10 shadow-xl relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-blue-600/10 blur-3xl"></div>
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-indigo-600/10 blur-3xl"></div>
-            
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-200">
-              Ready to bring your ideas to life?
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              I'm currently available for freelance work and full-time positions. Let's collaborate to create something amazing together.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/contact" 
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-blue-900/30"
-              >
-                <span>Get In Touch</span>
-                <ArrowRight size={18} />
-              </a>
-              <a 
-                href="/about" 
-                className="inline-flex items-center justify-center gap-2 bg-navy-800/70 border border-navy-700/50 text-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-navy-700/80 transition-colors duration-300"
-              >
-                <span>Learn About Me</span>
-              </a>
-            </div>
-          </div>
-        </AnimatedSection>
+        
         
         <style jsx global>{`
           @keyframes float {
