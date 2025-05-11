@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Github, ExternalLink, Code, Layout, Package, FileCode, Star, X, Calendar, User, Clock, Search, ChevronRight, ArrowRight } from 'lucide-react';
+import { Github, ExternalLink, Code, Layout, Package, FileCode, Star, X, Search, ChevronRight, ArrowRight } from 'lucide-react';
 import Navbar from './Navbar';
 
-// Enhanced animated section component with more options
-const AnimatedSection = ({ children, delay = 0, className = "", direction = "up", amount = 0.1 }) => {
+// Optimized animated section component
+const AnimatedSection = ({ children, delay = 0, className = "", amount = 0.1 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -31,21 +31,11 @@ const AnimatedSection = ({ children, delay = 0, className = "", direction = "up"
     };
   }, [delay, amount]);
 
-  const getTransform = () => {
-    switch (direction) {
-      case "up": return "translateY(20px)";
-      case "down": return "translateY(-20px)";
-      case "left": return "translateX(20px)";
-      case "right": return "translateX(-20px)";
-      default: return "translateY(20px)";
-    }
-  };
-
   return (
     <div
       ref={sectionRef}
       className={`transition-all duration-700 ease-out ${
-        isVisible ? "opacity-100 translate-y-0 translate-x-0" : `opacity-0 ${getTransform()}`
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       } ${className}`}
     >
       {children}
@@ -53,37 +43,25 @@ const AnimatedSection = ({ children, delay = 0, className = "", direction = "up"
   );
 };
 
-// Enhanced category icon mapping with colors
+// Category icon mapping with consistent sizing
 const getCategoryIcon = (category) => {
   const iconClass = "w-4 h-4";
   switch (category) {
-    case 'Web App':
-      return <Layout className={`${iconClass} text-blue-400`} />;
-    case 'Dashboard':
-      return <FileCode className={`${iconClass} text-purple-400`} />;
-    case 'Finance':
-      return <Package className={`${iconClass} text-emerald-400`} />;
-    case 'Tool':
-      return <Code className={`${iconClass} text-amber-400`} />;
-    case 'Mobile App':
-      return <Package className={`${iconClass} text-pink-400`} />;
-    default:
-      return <Star className={`${iconClass} text-indigo-400`} />;
+    case 'Web App': return <Layout className={`${iconClass} text-blue-400`} />;
+    case 'Dashboard': return <FileCode className={`${iconClass} text-purple-400`} />;
+    case 'Finance': return <Package className={`${iconClass} text-emerald-400`} />;
+    case 'Tool': return <Code className={`${iconClass} text-amber-400`} />;
+    case 'Mobile App': return <Package className={`${iconClass} text-pink-400`} />;
+    default: return <Star className={`${iconClass} text-indigo-400`} />;
   }
 };
 
-// Enhanced Project Modal with tabs and more details
+// Enhanced Project Modal - Simplified and focused
 const ProjectModal = ({ project, isOpen, onClose }) => {
   const modalRef = useRef(null);
-  const [activeTab, setActiveTab] = useState('overview');
   
   useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
-    };
-    
+    const handleEsc = (e) => e.key === 'Escape' && onClose();
     const handleClickOutside = (e) => {
       if (modalRef.current && !modalRef.current.contains(e.target)) {
         onClose();
@@ -106,183 +84,78 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   if (!isOpen) return null;
   
   return (
-    <div className="fixed inset-0 bg-navy-900/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-navy-900/95 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
       <div 
         ref={modalRef}
-        className="bg-gradient-to-br from-navy-800 to-navy-900 border border-blue-900/30 rounded-xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto relative"
-        style={{
-          animation: 'modalFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards'
-        }}
+        className="bg-gradient-to-br from-navy-800 to-navy-900 border border-blue-900/30 rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative"
       >
-        {/* Close button - more prominent */}
+        {/* Close button with better visibility */}
         <button 
           onClick={onClose}
           className="absolute -top-3 -right-3 bg-gradient-to-br from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 p-2 rounded-full transition-all duration-300 shadow-lg z-10 group"
+          aria-label="Close modal"
         >
           <X size={20} className="text-white group-hover:rotate-90 transition-transform" />
         </button>
         
-        {/* Modal header with image */}
-        <div className="relative h-72 md:h-96 overflow-hidden">
+        {/* Project image with gradient overlay */}
+        <div className="relative h-64 overflow-hidden">
           <img 
             src={project.image.includes("/api/placeholder") ? project.image : `/${project.image}`}
             alt={project.title} 
-            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+            className="w-full h-full object-cover"
             onError={(e) => {
               e.target.src = "/api/placeholder/800/400";
             }}
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/70 to-transparent"></div>
           
-          {/* Title and category */}
-          <div className="absolute bottom-0 left-0 w-full p-6 md:p-8">
+          <div className="absolute bottom-0 left-0 w-full p-6">
             <div className="flex items-center gap-3 mb-3">
               <div className="bg-blue-900/70 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 text-sm font-medium border border-blue-700/30">
                 {getCategoryIcon(project.category)}
                 <span className="text-blue-200">{project.category}</span>
               </div>
-              <div className="bg-navy-800/70 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 text-sm font-medium border border-navy-700/30 text-gray-300">
-                <Clock size={14} className="text-amber-400" />
-                <span>4 weeks</span>
-              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{project.title}</h2>
-            <p className="text-blue-100 max-w-2xl">{project.description.split('.')[0]}.</p>
+            <h2 className="text-3xl font-bold text-white mb-2">{project.title}</h2>
           </div>
         </div>
         
-        {/* Tabs navigation */}
-        <div className="border-b border-navy-700/50 px-6 md:px-8">
-          <div className="flex overflow-x-auto">
-            {['overview', 'technologies', 'features', 'gallery'].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-                  activeTab === tab
-                    ? 'border-blue-500 text-blue-400'
-                    : 'border-transparent text-gray-400 hover:text-gray-300'
-                }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
+        {/* Content area with subtle pattern */}
+        <div className="relative p-6 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNNTkgMUgxdjU4aDU4VjF6IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMjA3MjkiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9zdmc+')]">
+          {/* Description section */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-blue-200 mb-3">Project Description</h3>
+            <p className="text-gray-300 leading-relaxed">{project.description}</p>
           </div>
-        </div>
-        
-        {/* Modal content */}
-        <div className="p-6 md:p-8">
-          {/* Overview tab */}
-          {activeTab === 'overview' && (
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold text-blue-200 mb-3 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                  Project Overview
-                </h3>
-                <p className="text-gray-300 leading-relaxed">{project.description}</p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-navy-800/50 rounded-lg p-4 border border-navy-700/30">
-                  <h4 className="text-sm font-medium text-gray-400 mb-2">Challenge</h4>
-                  <p className="text-gray-300">Creating a scalable solution that could handle real-time traffic data processing while maintaining high accuracy in signal predictions.</p>
+          
+          {/* Tech stack section with enhanced visualization */}
+          <div>
+            <h3 className="text-xl font-semibold text-blue-200 mb-3">Technology Stack</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {project.techStack.map((tech, i) => (
+                <div 
+                  key={i} 
+                  className="bg-navy-800/60 rounded-lg p-3 border border-navy-700/30 hover:border-blue-700/50 transition-colors group flex items-center gap-3"
+                >
+                  <div className="w-8 h-8 rounded-md bg-gradient-to-br from-blue-900/50 to-navy-800 flex items-center justify-center group-hover:rotate-6 transition-transform flex-shrink-0">
+                    <Code size={16} className="text-blue-400" />
+                  </div>
+                  <span className="font-medium text-gray-200 truncate">{tech}</span>
                 </div>
-                <div className="bg-navy-800/50 rounded-lg p-4 border border-navy-700/30">
-                  <h4 className="text-sm font-medium text-gray-400 mb-2">Solution</h4>
-                  <p className="text-gray-300">Implemented a hybrid architecture combining edge computing for real-time processing with cloud-based analytics for historical pattern recognition.</p>
-                </div>
-              </div>
+              ))}
             </div>
-          )}
+          </div>
           
-          {/* Technologies tab */}
-          {activeTab === 'technologies' && (
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-blue-200 mb-3 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                Technology Stack
-              </h3>
-              
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {project.techStack.map((tech, i) => (
-                  <div 
-                    key={i} 
-                    className="bg-navy-800/40 rounded-lg p-4 border border-navy-700/30 hover:border-blue-700/50 transition-colors group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-md bg-gradient-to-br from-blue-900/50 to-navy-800 flex items-center justify-center group-hover:rotate-6 transition-transform">
-                        <Code size={16} className="text-blue-400" />
-                      </div>
-                      <span className="font-medium text-gray-200">{tech}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="bg-navy-800/50 rounded-lg p-4 border border-navy-700/30 mt-6">
-                <h4 className="text-sm font-medium text-gray-400 mb-2">Architecture</h4>
-                <p className="text-gray-300">The system follows a microservices architecture with containerized deployment using Docker and Kubernetes for orchestration, ensuring scalability and reliability.</p>
-              </div>
-            </div>
-          )}
-          
-          {/* Features tab */}
-          {activeTab === 'features' && (
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-blue-200 mb-3 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                Key Features
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[
-                  "Real-time traffic monitoring",
-                  "AI-powered signal optimization",
-                  "Emergency vehicle prioritization",
-                  "Historical data analytics",
-                  "Cross-platform compatibility",
-                  "Scalable cloud infrastructure"
-                ].map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-blue-900/50 flex items-center justify-center mt-0.5 flex-shrink-0">
-                      <ChevronRight size={12} className="text-blue-400" />
-                    </div>
-                    <p className="text-gray-300">{feature}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          
-          {/* Gallery tab */}
-          {activeTab === 'gallery' && (
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-blue-200 mb-3 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                Project Gallery
-              </h3>
-              
-              <div className="grid grid-cols-2 gap-4">
-                {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className="bg-navy-800/50 rounded-lg overflow-hidden border border-navy-700/30 aspect-video">
-                    <div className="w-full h-full bg-navy-700/30 flex items-center justify-center">
-                      <span className="text-gray-500">Screenshot {item}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          
-          {/* Action buttons - sticky at bottom */}
-          <div className="sticky bottom-0 bg-gradient-to-t from-navy-900 via-navy-900/90 to-transparent pt-8 pb-4 -mx-6 md:-mx-8 px-6 md:px-8 mt-8">
-            <div className="flex flex-col sm:flex-row gap-4">
+          {/* Action buttons */}
+          <div className="sticky bottom-0 pt-8 pb-4 -mx-6 px-6 mt-8 bg-gradient-to-t from-navy-900 via-navy-900/90 to-transparent">
+            <div className="flex flex-col sm:flex-row gap-3">
               <a 
                 href={project.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-navy-800 hover:bg-navy-700 transition-colors duration-300 border border-navy-700/50 flex-1 text-center group"
+                className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-navy-800 hover:bg-navy-700 transition-colors duration-300 border border-navy-700/50 text-center group flex-1"
               >
                 <Github size={18} className="text-gray-300 group-hover:text-white" />
                 <span className="font-medium text-gray-300 group-hover:text-white">View Code</span>
@@ -292,7 +165,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 href={project.demo} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex-1 text-center shadow-lg shadow-blue-900/20 group"
+                className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-center shadow-lg shadow-blue-900/20 group flex-1"
               >
                 <span className="font-medium">Live Demo</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -305,25 +178,21 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   );
 };
 
-// Enhanced Project Card with better hover effects
-const ProjectCard = ({ project, index, onClick }) => {
+// Optimized Project Card with better performance
+const ProjectCard = React.memo(({ project, index, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const cardRef = useRef(null);
 
   return (
     <div 
-      ref={cardRef}
-      className="relative bg-gradient-to-br from-navy-800/90 to-navy-900/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-blue-900/20 cursor-pointer group"
+      className="relative bg-gradient-to-br from-navy-800/90 to-navy-900/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-blue-900/20 cursor-pointer group transition-all duration-400 ease-out"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
       style={{
-        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-        animationDelay: `${index * 100}ms`,
-        animation: 'cardFadeIn 0.6s forwards',
-        transform: isHovered ? 'translateY(-8px)' : 'translateY(0)',
-        boxShadow: isHovered ? '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+        transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
+        boxShadow: isHovered ? '0 10px 25px -5px rgba(0, 0, 0, 0.2)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
       }}
+      aria-label={`View ${project.title} project`}
     >
       {/* Glow effect */}
       <div className={`absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none`}></div>
@@ -333,12 +202,13 @@ const ProjectCard = ({ project, index, onClick }) => {
         <img 
           src={project.image.includes("/api/placeholder") ? project.image : `/${project.image}`}
           alt={project.title} 
-          className={`w-full h-full object-cover transition-all duration-700 ${
+          className={`w-full h-full object-cover transition-transform duration-700 ${
             isHovered ? 'scale-105' : 'scale-100'
           }`}
           onError={(e) => {
             e.target.src = "/api/placeholder/600/400";
           }}
+          loading="lazy"
         />
         <div className={`absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent transition-opacity duration-500 ${
           isHovered ? 'opacity-90' : 'opacity-80'
@@ -375,7 +245,7 @@ const ProjectCard = ({ project, index, onClick }) => {
         
         <div className="flex items-center justify-between">
           <div className="text-xs text-blue-300 font-medium group-hover:text-blue-200 transition-colors">
-            View case study →
+            View details →
           </div>
           <div className="w-8 h-8 rounded-full bg-navy-700/70 flex items-center justify-center border border-navy-600/50 group-hover:bg-blue-900/70 group-hover:border-blue-700/50 transition-colors">
             <ExternalLink size={14} className="text-blue-300 group-hover:text-white transition-colors" />
@@ -384,14 +254,13 @@ const ProjectCard = ({ project, index, onClick }) => {
       </div>
     </div>
   );
-};
+});
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProject, setSelectedProject] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const headerRef = useRef(null);
   
   const projects = [
     {
@@ -452,20 +321,21 @@ const Projects = () => {
   
   const categories = ['All', 'Web App', 'Dashboard', 'Finance', 'Tool', 'Mobile App'];
   
-  const filteredProjects = projects.filter(project => {
-    const matchesCategory = activeFilter === 'All' || project.category === activeFilter;
-    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          project.techStack.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()));
-    
-    return matchesCategory && matchesSearch;
-  });
+  const filteredProjects = React.useMemo(() => {
+    return projects.filter(project => {
+      const matchesCategory = activeFilter === 'All' || project.category === activeFilter;
+      const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            project.techStack.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()));
+      
+      return matchesCategory && matchesSearch;
+    });
+  }, [projects, activeFilter, searchQuery]);
     
   useEffect(() => {
-    // Simulate loading
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 800);
+    }, 500);
     
     return () => clearTimeout(timer);
   }, []);
@@ -474,7 +344,6 @@ const Projects = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-950 to-indigo-900 text-white flex flex-col relative overflow-x-hidden">
       <Navbar />
 
-      {/* Project Modal */}
       {selectedProject && (
         <ProjectModal 
           project={selectedProject} 
@@ -483,19 +352,19 @@ const Projects = () => {
         />
       )}
 
-      {/* Animated background elements */}
+      {/* Optimized animated background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <div 
             key={i}
-            className="absolute rounded-full opacity-5 blur-xl"
+            className="absolute rounded-full opacity-10 blur-xl animate-float"
             style={{
-              background: `radial-gradient(circle, ${i % 2 === 0 ? '#3b82f6' : '#8b5cf6'}, transparent)`,
-              width: `${Math.random() * 300 + 100}px`,
-              height: `${Math.random() * 300 + 100}px`,
+              background: i % 2 === 0 ? '#3b82f6' : '#8b5cf6',
+              width: `${Math.random() * 200 + 100}px`,
+              height: `${Math.random() * 200 + 100}px`,
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              animation: `float ${Math.random() * 20 + 10}s infinite ease-in-out`,
+              animationDuration: `${Math.random() * 15 + 10}s`,
               animationDelay: `${Math.random() * 5}s`
             }}
           />
@@ -503,7 +372,7 @@ const Projects = () => {
       </div>
       
       {/* Hero section */}
-      <section ref={headerRef} className="relative py-20 md:py-28 px-6 overflow-hidden">
+      <section className="relative py-20 md:py-28 px-6 overflow-hidden">
         <div className="container mx-auto text-center relative z-10">
           <AnimatedSection delay={100}>
             <div className="inline-flex items-center bg-navy-800/50 border border-navy-700/30 rounded-full px-4 py-1.5 mb-4">
@@ -532,7 +401,6 @@ const Projects = () => {
         <AnimatedSection delay={300} className="mb-8">
           <div className="bg-navy-800/50 backdrop-blur-md p-4 rounded-xl border border-blue-900/20 shadow-lg">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              {/* Enhanced search input */}
               <div className="relative w-full md:w-72">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Search size={18} className="text-gray-500" />
@@ -543,18 +411,19 @@ const Projects = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full bg-navy-900/70 border border-blue-900/30 rounded-lg py-2.5 px-4 pl-10 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/40 placeholder-gray-500 transition-all duration-300"
+                  aria-label="Search projects"
                 />
                 {searchQuery && (
                   <button 
                     onClick={() => setSearchQuery('')}
                     className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                    aria-label="Clear search"
                   >
                     <X size={18} className="text-gray-500 hover:text-gray-300 transition-colors" />
                   </button>
                 )}
               </div>
               
-              {/* Enhanced category filters */}
               <div className="flex flex-wrap gap-2">
                 {categories.map((category) => (
                   <button
@@ -575,7 +444,6 @@ const Projects = () => {
           </div>
         </AnimatedSection>
         
-        {/* Project count info */}
         <AnimatedSection delay={400} className="mb-6">
           <div className="flex justify-between items-center">
             <p className="text-sm text-gray-300">
@@ -637,7 +505,6 @@ const Projects = () => {
         {/* Call to action */}
         <AnimatedSection delay={600} className="mt-20 text-center">
           <div className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 backdrop-blur-sm border border-blue-800/20 rounded-xl p-8 md:p-10 shadow-xl relative overflow-hidden">
-            {/* Decorative elements */}
             <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-blue-600/10 blur-3xl"></div>
             <div className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-indigo-600/10 blur-3xl"></div>
             
@@ -667,34 +534,12 @@ const Projects = () => {
         
         <style jsx global>{`
           @keyframes float {
-            0%, 100% {
-              transform: translate(0, 0);
-            }
-            50% {
-              transform: translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px);
-            }
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 20px); }
           }
           
-          @keyframes cardFadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          
-          @keyframes modalFadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(20px) scale(0.98);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0) scale(1);
-            }
+          .animate-float {
+            animation: float ease-in-out infinite;
           }
         `}</style>
       </div>

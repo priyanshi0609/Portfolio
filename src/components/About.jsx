@@ -148,7 +148,7 @@ const AboutSection = () => {
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">5 X Hack winner</span>
                     <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">6 x Finalist</span>
-                    <span className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm">12x Participated</span>
+                    
                     
                   </div>
                 </div>
