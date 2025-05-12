@@ -304,7 +304,7 @@ const Projects = () => {
       description: "A modern payment processing platform with fraud detection and real-time analytics built for e-commerce businesses.",
       image: "/api/placeholder/600/400",
       techStack: ["React", "Node.js", "Stripe API", "MongoDB", "Redis"],
-      github: "https://github.com/priyanshi/payment-processor",
+      github: "https://github.com/priyanshi0609/Sahyog",
       demo: "https://nexus-pay.vercel.app",
       category: "Finance"
     },
