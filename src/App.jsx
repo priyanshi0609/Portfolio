@@ -4,6 +4,7 @@ import About from './components/About';
 import EducationPage from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import AchievementCarousel from './components/Achievments';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/education" element={<EducationPage />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/achievements" element={<AchievementCarousel />} />
       </Routes>
     </Router>
   );
