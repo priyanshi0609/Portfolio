@@ -6,17 +6,17 @@ import Navbar from './Navbar';
 const achievements = [
   {
     id: 1,
-    title: "First Place Hackathon Winner",
-    image: "/api/placeholder/600/400",
+    title: "First Place @IIT'Delhi Hackathon",
+    image: "A1.jpg",
     description: "Led a team of four developers to create an innovative solution for climate change awareness, winning first place at the Global Tech Hackathon 2024.",
     icon: <Award className="text-yellow-400" size={24} />
   },
   {
     id: 2,
-    title: "Outstanding Research Paper",
-    image: "/api/placeholder/600/400",
-    description: "Published a peer-reviewed research paper on advanced web development techniques in the International Journal of Computer Science.",
-    icon: <BookOpen className="text-blue-400" size={24} />
+    title: "My Boyfriend- Arsh Tiwari",
+    image: "arshu.jpg",
+    description: "My Favorite Achievement 💙 -Not every win comes with a medal—some come with a smile that makes your worst day better and your best days unforgettable. This is him—my constant, my calm, my chaos, and the best part of my journey so far.💫",
+    icon: <Award className="text-blue-400" size={24} />
   },
   {
     id: 3,
@@ -38,13 +38,13 @@ export default function AchievementCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Auto-advance the carousel every 5 seconds
+  // Auto-advance the carousel 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isAnimating) {
         handleNext();
       }
-    }, 5000);
+    }, 10000);
     
     return () => clearInterval(interval);
   }, [currentIndex, isAnimating]);
@@ -131,9 +131,7 @@ export default function AchievementCarousel() {
                           alt={achievements[currentIndex].title}
                           className="w-full h-72 object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-                          <span className="text-white font-medium">View Project →</span>
-                        </div>
+                       
                       </div>
                     </div>
                   </div>
