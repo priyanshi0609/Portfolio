@@ -147,8 +147,8 @@ const Contact = () => {
             {/* Right Section - Contact Form */}
             <div className="md:w-3/5 p-10 lg:p-12">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">Send Me a Message</h2>
-                <p className="text-gray-600">I'd love to hear from you! Fill out the form below and I'll respond as soon as possible.</p>
+                <h2 className="text-3xl font-bold text-white mb-2">Send Me a Message</h2>
+                <p className="text-gray-400">I'd love to hear from you! Fill out the form below and I'll respond as soon as possible.</p>
               </div>
               
               {submitSuccess && (
@@ -163,7 +163,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Full Name *</label>
                     <input 
                       type="text" 
                       id="name" 
@@ -175,7 +175,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email Address *</label>
                     <input 
                       type="email" 
                       id="email" 
@@ -189,7 +189,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                  <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">Subject *</label>
                   <input 
                     type="text" 
                     id="subject" 
@@ -202,7 +202,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">Message *</label>
                   <textarea 
                     id="message" 
                     rows="5" 
