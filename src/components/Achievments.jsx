@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Award, BookOpen, Code, Mic } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Award, BookOpen, Code, Mic, AwardIcon } from 'lucide-react';
 import Navbar from './Navbar';
 
 // Sample achievements data - replace with your own
@@ -8,29 +8,29 @@ const achievements = [
     id: 1,
     title: "First Place @IIT'Delhi Hackathon",
     image: "A1.jpg",
-    description: "Led a team of four developers to create an innovative solution for climate change awareness, winning first place at the Global Tech Hackathon 2024.",
+    description: "Won the IIT'D Hack organized by mappls during Tryst'25 (Team Synapse).",
     icon: <Award className="text-yellow-400" size={24} />
   },
   {
     id: 2,
-    title: "My Boyfriend- Arsh Tiwari",
-    image: "arshu.jpg",
-    description: "My Favorite Achievement 💙 -Not every win comes with a medal—some come with a smile that makes your worst day better and your best days unforgettable. This is him—my constant, my calm, my chaos, and the best part of my journey so far.💫",
+    title: "3rd Place at M# Hackathon (MIT,Manipal)",
+    image: "A2.png",
+    description: "3rd Place Winner of 450+ teams from 243 colleges (Team Synapse)",
     icon: <Award className="text-blue-400" size={24} />
   },
   {
     id: 3,
-    title: "Open Source Contribution Award",
-    image: "/api/placeholder/600/400",
-    description: "Recognized for significant contributions to major open-source projects, improving performance by 35% through code optimization.",
-    icon: <Code className="text-green-400" size={24} />
+    title: "Top 26 in Smart Delhi Ideathon",
+    image: "A3.jpg",
+    description: "From 1000 𝐭𝐞𝐚𝐦𝐬 to the 𝐭𝐨𝐩 148, and 𝐚𝐦𝐨𝐧𝐠 𝐭𝐡𝐞 𝐭𝐨𝐩 26 in our Problem",
+    icon: <Award className="text-green-400" size={24} />
   },
   {
     id: 4,
-    title: "Tech Speaker of the Year",
-    image: "/api/placeholder/600/400",
-    description: "Selected as the Tech Speaker of the Year at the annual Developer Conference for an inspiring presentation on modern web architecture.",
-    icon: <Mic className="text-red-400" size={24} />
+    title: "2nd place at Codescript(DTU)",
+    image: "A4.png",
+    description: "Representing BPIT at CodeScript 3.0 x RTE MIS DPG Hackathon, organized under Invictus '25 at Delhi Technological University (DTU), securing an impressive 2nd place!",
+    icon: <Award className="text-red-400" size={24} />
   },
 ];
 

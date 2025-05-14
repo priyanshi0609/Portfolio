@@ -50,7 +50,7 @@ const Contact = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Me</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Get In Touch</h1>
           <p className="text-xl text-blue-200 max-w-2xl mx-auto">
             Let's build something amazing together. Reach out and I'll respond as soon as possible.
           </p>
@@ -73,7 +73,7 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold text-blue-50">Email</p>
                     <p className="text-blue-100/90 hover:text-white transition-colors">
-                      <a href="mailto:contact@example.com">contact@example.com</a>
+                      <a href="mailto:contact@example.com">priyanshibothra753@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold text-blue-50">Phone</p>
                     <p className="text-blue-100/90 hover:text-white transition-colors">
-                      <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                      <a href="tel:+15551234567">+91 8920854526</a>
                     </p>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-blue-50">Location</p>
-                    <p className="text-blue-100/90">San Francisco, CA</p>
+                    <p className="text-blue-100/90">Delhi,India</p>
                   </div>
                 </div>
               </div>
@@ -132,7 +132,7 @@ const Contact = () => {
                     <Twitter className="text-blue-200" size={20} />
                   </a>
                   <a 
-                    href="https://instagram.com" 
+                    href="https://www.instagram.com/_.priyanshi.01__/" 
                     className="bg-white/10 p-3 rounded-xl hover:bg-white/20 transition-all duration-300 hover:-translate-y-1" 
                     aria-label="Instagram"
                     target="_blank"
@@ -170,7 +170,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50" 
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white" 
                       placeholder="John Doe"
                     />
                   </div>
@@ -182,7 +182,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50" 
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white" 
                       placeholder="john@example.com"
                     />
                   </div>
@@ -196,7 +196,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50" 
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white" 
                     placeholder="How can I help you?"
                   />
                 </div>
@@ -209,7 +209,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white/50" 
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white" 
                     placeholder="Tell me about your project or inquiry..."
                   ></textarea>
                 </div>
