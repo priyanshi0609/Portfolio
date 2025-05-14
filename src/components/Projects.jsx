@@ -48,8 +48,8 @@ const getCategoryIcon = (category) => {
   const iconClass = "w-4 h-4";
   switch (category) {
     case 'Web App': return <Layout className={`${iconClass} text-blue-400`} />;
-    case 'Dashboard': return <FileCode className={`${iconClass} text-purple-400`} />;
-    case 'Finance': return <Package className={`${iconClass} text-emerald-400`} />;
+    case 'Tourism': return <FileCode className={`${iconClass} text-purple-400`} />;
+    case 'Education': return <Package className={`${iconClass} text-emerald-400`} />;
     case 'Tool': return <Code className={`${iconClass} text-amber-400`} />;
     case 'Mobile App': return <Package className={`${iconClass} text-pink-400`} />;
     default: return <Star className={`${iconClass} text-indigo-400`} />;
@@ -84,7 +84,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   if (!isOpen) return null;
   
   return (
-    <div className="fixed inset-0 bg-navy-900/95 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-navy-900/95  z-50 flex items-center justify-center p-4 overflow-y-auto">
       <div 
         ref={modalRef}
         className="bg-gradient-to-br from-navy-800 to-navy-900 border border-blue-900/30 rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative"
@@ -109,7 +109,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             }}
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-blue"></div>
           
           <div className="absolute bottom-0 left-0 w-full p-6">
             <div className="flex items-center gap-3 mb-3">
@@ -123,7 +123,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
         </div>
         
         {/* Content area with subtle pattern */}
-        <div className="relative p-6 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNNTkgMUgxdjU4aDU4VjF6IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMjA3MjkiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9zdmc+')]">
+        <div className="relative p-6 bg-blue-900">
           {/* Description section */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-blue-200 mb-3">Project Description</h3>
@@ -279,7 +279,7 @@ const Projects = () => {
       techStack: ["React", "Node.js", "Firebase", "Tailwind CSS", "OCR Recognition", "Cohere AI", "Assembly AI"],
       github: "https://github.com/priyanshi/ecommerce-analytics",
       demo: "https://recap-5ajg.vercel.app/",
-      category: "Dashboard"
+      category: "Education"
     },
     {
       title: "Athleto",
@@ -288,38 +288,30 @@ const Projects = () => {
       techStack: ["Next.js", "Supabase", "TypeScript", "Tailwind CSS", "Zustand"],
       github: "https://github.com/priyanshi0609/Athleto",
       demo: "https://athleto-project.vercel.app/",
-      category: "Finance"
+      category: "Web App"
     },
     {
       title: "Travello",
-      description: "An all-in-one platform for planning, creating, and scheduling content across multiple social media platforms with analytics integration.",
-      image: "/api/placeholder/600/400",
-      techStack: ["Next.js", "GraphQL", "AWS Lambda", "OAuth", "Material UI"],
-      github: "https://github.com/priyanshi/content-scheduler",
-      demo: "https://social-scheduler.vercel.app",
-      category: "Tool"
+      description: "Our platform is designed to revolutionize the travel experience by guiding you to hidden attractions and cultural experiences through interactive challenges. We integrate gamification with AI-powered personalization to create dynamic itineraries that adapt to your interests and real-time conditions, making every journey a memorable adventure.",
+      image: "travello.png",
+      techStack: ["React", "Node.js", "Firebase", "MapBox-api", "Tailwind CSS", "MongoDB",],
+      github: "https://github.com/priyanshi0609/Manipal-Hackathon",
+      demo: "https://travello-synapse.vercel.app/",
+      category: "Tourism"
     },
     {
       title: "Sahyog",
-      description: "A modern payment processing platform with fraud detection and real-time analytics built for e-commerce businesses.",
-      image: "/api/placeholder/600/400",
-      techStack: ["React", "Node.js", "Stripe API", "MongoDB", "Redis"],
+      description: "Centralized Disaster Response and Inventory Management System that leverages AI and Google Cloud Technologies to predict disasters, optimize resource management, and provide real-time coordination.",
+      image: "sahyog.png",
+      techStack: ["React","Flutter","Vertex-AI","FastApi","Node.js","Express","MonogDB"],
       github: "https://github.com/priyanshi0609/Sahyog",
-      demo: "https://nexus-pay.vercel.app",
-      category: "Finance"
+      demo: "https://sahyog-project.vercel.app/",
+      category: "Web App"
     },
-    {
-      title: "Voxel",
-      description: "3D modeling tool for game developers with real-time collaboration features and cloud rendering capabilities.",
-      image: "/api/placeholder/600/400",
-      techStack: ["Three.js", "WebGL", "WebSockets", "Node.js", "MongoDB"],
-      github: "https://github.com/priyanshi/voxel-editor",
-      demo: "https://voxel-3d.vercel.app",
-      category: "Tool"
-    },
+   
   ];
   
-  const categories = ['All', 'Web App', 'Dashboard', 'Finance', 'Tool', 'Mobile App'];
+  const categories = ['All', 'Web App', 'Tourism', 'Education', 'Tool', 'Mobile App'];
   
   const filteredProjects = React.useMemo(() => {
     return projects.filter(project => {
