@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@arshtiwari/envguard": "^1.0.8",
     "@tailwindcss/vite": "^4.0.17",
     "framer-motion": "^12.10.5",
     "lucide": "^0.484.0",
