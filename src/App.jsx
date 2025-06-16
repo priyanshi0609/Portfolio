@@ -1,25 +1,28 @@
 import React from 'react';
-import Home from './components/Home';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import About from './components/About';
-import EducationPage from './components/Education';
+import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Education from './components/Education';
+import Experience from './components/Experiences';
+import Achievements from './components/Achievements';
 import Contact from './components/Contact';
-import AchievementCarousel from './components/Achievments';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/education" element={<EducationPage />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/achievements" element={<AchievementCarousel />} />
-      </Routes>
-    </Router>
+    <div className="bg-gray-50 text-navy-900 min-h-screen">
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Education />
+      <Experience />
+      <Achievements />
+      <Contact />
+    </div>
   );
-}
+};
 
 export default App;
