@@ -12,7 +12,7 @@
   "dependencies": {
     "@arshtiwari/envguard": "^1.0.8",
     "@tailwindcss/vite": "^4.0.17",
-    "framer-motion": "^12.10.5",
+    "framer-motion": "^12.18.1",
     "lucide": "^0.484.0",
     "lucide-react": "^0.484.0",
     "react": "^19.0.0",
