@@ -7,11 +7,13 @@ const Hero = () => {
   const [isTyping, setIsTyping] = useState(true);
   
   const skills = [
-    'Frontend Developer',
-    'React Specialist',
-    'UI/UX Enthusiast',
-    'JavaScript Expert',
-    'Problem Solver'
+    'Full Stack Developer',
+    'UI/UX Designer',
+    'AI/ML Enthusiast',
+    'Result Driven Problem Solver',
+    'Open Source Contributor',
+    'Hackathon Winner',
+    'Tech Blogger',
   ];
 
   useEffect(() => {
@@ -43,11 +45,11 @@ const Hero = () => {
   }, [displayText, isTyping, currentSkill, skills]);
 
   const handleDownloadCV = () => {
-    // Replace this URL with your actual PDF URL
-    const pdfUrl = '/path/to/your/cv.pdf';
+    
+    const pdfUrl = 'https://drive.google.com/file/d/1BxzlofvBqA5bKw-5v9S17NYJGZIq09qg/view?usp=drive_link';
     const link = document.createElement('a');
     link.href = pdfUrl;
-    link.download = 'John_Doe_CV.pdf'; // The filename for download
+    link.download = 'Priyanshi_Bothra CV'; // The filename for download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -56,19 +58,19 @@ const Hero = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: 'https://github.com/johndoe',
+      href: 'https://github.com/priyanshi0609',
       label: 'GitHub',
       color: 'hover:bg-gray-900 hover:text-white'
     },
     {
       icon: Linkedin,
-      href: 'https://linkedin.com/in/johndoe',
+      href: 'https://www.linkedin.com/in/priyanshi-bothra-339568219/',
       label: 'LinkedIn',
       color: 'hover:bg-blue-600 hover:text-white'
     },
     {
       icon: Mail,
-      href: 'mailto:john@example.com',
+      href: 'mailto:priyanshibothra753@gmail.com',
       label: 'Email',
       color: 'hover:bg-red-500 hover:text-white'
     }
@@ -96,8 +98,8 @@ const Hero = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 animate-fadeInUp animation-delay-200">
-                John
-                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Doe</span>
+                  Priyanshi 
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Bothra</span>
               </h1>
               
               {/* Typewriter Effect */}
@@ -173,8 +175,8 @@ const Hero = () => {
               {/* Profile Image */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-white shadow-xl bg-gradient-to-br from-blue-50 to-indigo-50">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                  alt="John Doe - Frontend Developer"
+                  src="priyanshi.png"
+                  alt="Priyanshi Bothra"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
                 
