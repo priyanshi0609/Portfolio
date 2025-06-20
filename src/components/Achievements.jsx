@@ -1,27 +1,31 @@
 import React from 'react';
 import SectionWrapper from './SectionWrapper';
+import { Trophy, Flag, Code2, Youtube } from 'lucide-react';
 
 const achievements = [
   {
-    title: 'Best UI Design Award 2022',
-    issuer: 'Design Association',
-    year: '2022',
-    description:
-      'Recognized for outstanding user interface design in the annual web design competition.',
+    title: '5x Hackathon Winner',
+    year: '2024-2025',
+    description: 'IIT Delhi Mappls 1st — SDI Top 26/1000+ — Codescript DTU 2nd.',
+    icon: <Trophy className="text-blue-600 w-8 h-8" />,
   },
   {
-    title: 'Hackathon Winner',
-    issuer: 'TechFest 2021',
-    year: '2021',
-    description:
-      'Won first place in a 48-hour hackathon by building an innovative productivity app.',
+    title: '6x Hackathon Finalist',
+    year: '2024-2025',
+    description: 'Reached finals in multiple prestigious hackathons across India',
+    icon: <Flag className="text-green-600 w-8 h-8" />,
   },
   {
     title: 'Open Source Contributor',
-    issuer: 'GitHub',
-    year: '2020',
-    description:
-      'Contributed to several popular open-source projects with significant code contributions.',
+    year: '2024-25',
+    description: 'Contributed to several open source projects, enhancing community-driven software development.',
+    icon: <Code2 className="text-purple-600 w-8 h-8" />,
+  },
+  {
+    title: 'Youtube Creator',
+    year: '2025',
+    description: '100+ subscribers, sharing coding knowledge and tech insights',
+    icon: <Youtube className="text-red-600 w-8 h-8" />,
   },
 ];
 
@@ -38,21 +42,18 @@ const Achievements = () => {
             key={index}
             className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
           >
-            <div className="relative mb-6">
-              <div className="absolute -top-10 -left-10 w-20 h-20 bg-navy-100 rounded-full opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <div className="absolute -bottom-5 -right-5 w-16 h-16 bg-navy-200 rounded-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold text-navy-800 mb-2">
+            <div className="relative mb-4 flex items-center space-x-4">
+              <div className="p-3 bg-gray-100 rounded-full shadow-inner">
+                {achievement.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-navy-800">
                   {achievement.title}
                 </h3>
-                <p className="text-navy-600 font-medium">
-                  {achievement.issuer} | {achievement.year}
-                </p>
+                <p className="text-navy-600 text-sm">{achievement.year}</p>
               </div>
             </div>
-            <p className="text-navy-600 relative z-10">
-              {achievement.description}
-            </p>
+            <p className="text-navy-600">{achievement.description}</p>
           </div>
         ))}
       </div>
