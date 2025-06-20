@@ -3,19 +3,9 @@ import SectionWrapper from './SectionWrapper';
 
 const experiences = [
   {
-    position: 'Senior Frontend Developer',
-    company: 'TechCorp Inc.',
-    duration: '2021 - Present',
-    responsibilities: [
-      'Lead a team of 5 developers in building enterprise-level applications',
-      'Implemented new React architecture that improved performance by 40%',
-      'Mentored junior developers and conducted code reviews',
-    ],
-  },
-  {
     position: 'Frontend Developer',
-    company: 'WebSolutions Ltd.',
-    duration: '2018 - 2021',
+    company: 'Eterna Infotech Pvt Ltd | Manipal, Karnataka, India.',
+    duration: 'November 2024 – March 2025',
     responsibilities: [
       'Developed responsive web applications using React and Redux',
       'Collaborated with designers to implement pixel-perfect UIs',
@@ -23,8 +13,8 @@ const experiences = [
     ],
   },
   {
-    position: 'Junior Web Developer',
-    company: 'Digital Creations',
+    position: 'Technical Team Member',
+    company: 'The NAMESPACE Community | New Delhi, Delhi, India',
     duration: '2016 - 2018',
     responsibilities: [
       'Built and maintained client websites using HTML, CSS, and JavaScript',

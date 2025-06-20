@@ -89,11 +89,7 @@ const About = () => {
             
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100 hover:shadow-lg transition-shadow duration-300">
               <p className="text-gray-700 leading-relaxed text-lg">
-                Beyond code, I actively contribute to leadership and community-building activities — having served 
-                as the Project Chair in Rotract club and as the PR Head in a college society, showcasing my ability 
-                to lead, communicate, and collaborate effectively. I'm a firm believer in continuous learning, and 
-                when I'm not immersed in tech, you'll find me dancing, reading, or exploring new ideas with curiosity 
-                and joy.
+                Beyond coding, I’ve led as Project Chair in the Rotaract Club and PR Head in a college society, highlighting my leadership and communication skills. A lifelong learner, I also enjoy dancing, reading, and exploring new ideas with curiosity.
               </p>
             </div>
           </div>
@@ -110,8 +106,8 @@ const About = () => {
                   </div>
                   Professional Highlights
                 </h4>
-                <p className="text-lg text-gray-700 font-medium leading-relaxed">
-                  SWE Intern @Mappls | Ex-WebD Intern @Eterna Infotech | 5× Hackathon Winner | 6× Finalist
+                <p className="text-md text-gray-700 font-medium leading-relaxed">
+                  Intern @Mappls | Ex-WebD Intern @Eterna Infotech | 5× Hackathon Winner | 6× Finalist
                 </p>
               </div>
             </div>
