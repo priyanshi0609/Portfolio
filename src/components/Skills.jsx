@@ -25,6 +25,12 @@ const skillCategories = [
     skills: ['Git', 'GitHub',  'Vercel', 'Netlify',  'Testing Library'],
   },
   {
+    title:'Generative AI',
+    icon: <Cpu className="w-5 h-5" />,
+    skills:['Prompt Engineering', 'LangChain', 'RAG Pipelines', 'OpenAI API', 'Gemini', 'Pinecone', 'FAISS',
+'LLMs (GPT, LLaMA)', 'Vector DBs', 'Transformers', 'MCP Servers',],
+  },
+  {
     title: 'Other Technologies',
     icon: <GitFork className="w-5 h-5" />,
     skills: ['Firebase', 'MongoDB', 'PostgreSQL','Supabase',],
