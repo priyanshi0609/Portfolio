@@ -49,16 +49,16 @@ const projects = [
     github: 'https://github.com/priyanshi0609/Athleto',
     category: 'Full Stack',
   },
-  // {
-  //   title: 'SmartHome Control',
-  //   description: 'IoT-based home automation system with voice control, mobile app integration, and intelligent energy management capabilities.',
-  //   technologies: ['React Native', 'Node.js', 'MQTT', 'Raspberry Pi', 'AWS IoT', 'Alexa SDK'],
-  //   image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  //   link: '#',
-  //   github: '#',
-  //   category: 'IoT'
-  // },
-];
+  {
+    title: 'LearnMate',
+    description: 'A smart, AI-driven platform that creates personalized revision plans, identifies weak areas from test data, and assists students with doubt resolution using Google Gemini, LangChain, and Vector Search.',
+    technologies: ['React', 'Python', 'MCP', 'Pandas', 'Regular Expressions', 'PyMuPDF', 'Gemini API', 'RAGs', 'LangChain'],
+    image: 'Learnmate.png',
+    link: 'https://learn-mate-omega.vercel.app',
+    github: 'https://github.com/priyanshi0609/LearnMate',
+    category: 'EdTech',
+ },
+]
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
