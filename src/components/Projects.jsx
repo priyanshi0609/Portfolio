@@ -8,7 +8,7 @@ const projects = [
     title: 'Signal-X',
     description: 'AI-powered traffic optimization system using YOLOv8 for real-time vehicle detection and Arduino-controlled signals to dynamically adjust traffic flow.',
     technologies: ['YOLOv8', 'Python', 'MapMyIndia API', 'Arduino', 'Expo', 'OpenCV'],
-    image: 'signalx.png',
+    image: 'image.png',
     link: 'https://signal-x-zkh5.vercel.app/',
     github: 'https://github.com/priyanshi0609/Signal--X',
     category: 'AI/ML'
